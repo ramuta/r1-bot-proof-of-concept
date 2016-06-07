@@ -25,7 +25,7 @@ def send_to_messenger(sender_id, message):
 def send_to_api_ai(message, sender_id):
     auth = get_api_ai_client_access_token()
     url = "https://api.api.ai/v1/query"
-    params = {"query": message, "v": "20150910", "sessionId": "1234567890", "lang": "en"}
+    params = {"query": message, "v": "20150910", "sessionId": str(sender_id), "lang": "en"}
     logging.info(str(params))
     result = urlfetch.fetch(url=url,
                             payload=json.dumps(params),
