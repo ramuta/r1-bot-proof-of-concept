@@ -37,7 +37,7 @@ def send_to_api_ai(message, sender_id):
     speech = bot_response["result"]["speech"]
     logging.info(speech)
     if not speech:
-        send_to_messenger(sender_id, "Sorry, didn't understand what you mean... Ask me to tell you a joke :)")
+        send_to_messenger(sender_id, "Sorry, didn't understand what you mean... Ask me something else :)")
     else:
         send_to_messenger(sender_id, speech)
 
